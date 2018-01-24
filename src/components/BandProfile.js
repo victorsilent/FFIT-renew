@@ -7,33 +7,20 @@ const BandProfile = ({ bandName, description, albums, imageHeader }) => {
             <Image
                 resizeMode="cover"
                 style={styles.cardImage}
-                source={{uri: "http://via.placeholder.com/300x400"}}
+                source={{uri: imageHeader}}
             ></Image>
             <View style={styles.container}>
                 <Text style={styles.bandName}>{bandName}</Text>
-                <Text style={styles.description}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed consectetur porro dignissimos expedita excepturi vero? Dolore, deserunt velit? Illum sequi deleniti iusto explicabo vel fugit, similique voluptas officia blanditiis modi!</Text>
+                <Text style={styles.description}>{description}</Text>
                 <Text style={{marginBottom: 10, marginTop: 10, fontSize: 16}}>Albuns</Text>
                 <View style={styles.containerAlbums}>
-                    <Image
-                        resizeMode="cover"
-                        style={styles.icon}
-                        source={{uri: "http://via.placeholder.com/300x300"}}
-                    ></Image>
-                    <Image
-                        resizeMode="cover"
-                        style={styles.icon}
-                        source={{uri: "http://via.placeholder.com/300x300"}}
-                    ></Image>
-                    <Image
-                        resizeMode="cover"
-                        style={styles.icon}
-                        source={{uri: "http://via.placeholder.com/300x300"}}
-                    ></Image>
-                    <Image
-                        resizeMode="cover"
-                        style={styles.icon}
-                        source={{uri: "http://via.placeholder.com/300x300"}}
-                    ></Image>
+                    {albums.map((album) => {
+                        return  <Image
+                                    style={styles.icon}
+                                    key={album.id}
+                                    source={{uri: album.albumPicture}}
+                                ></Image>
+                    })}
                 </View>
             </View>
         </View>

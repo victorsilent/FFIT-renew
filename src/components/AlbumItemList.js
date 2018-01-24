@@ -1,17 +1,17 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
-const AlbuItemList = ({bandName, imageAlbum, albumTotalTime}) => {
+const AlbuItemList = ({albumName, imageAlbum, albumTotalTime, onPressed}) => {
     return (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={onPressed}>
             <View style={styles.container}>
                 <Image
                         resizeMode="cover"
                         style={styles.itemImage}
                         source={{uri: "http://via.placeholder.com/300x300"}}
                         ></Image>
-                <Text style={styles.bandName}>Teste</Text>
-                <Text style={styles.albumTotalTime}>36:10</Text>
+                <Text style={styles.albumName}>{albumName}</Text>
+                <Text style={styles.albumTotalTime}>{albumTotalTime}</Text>
             </View>
         </TouchableOpacity>
     );
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         marginRight: 10,
         flex: 1,
     },
-    bandName: {
+    albumName: {
         flex: 4,
     },
     albumTotalTime: {

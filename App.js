@@ -1,35 +1,27 @@
-import React from 'react';
-import { StyleSheet, Text, View, FlatList, ScrollView  } from 'react-native';
-import Album from './src/components/Album';
-import AlbumList from './src/components/AlbumList';
-import Band from './src/components/Band';
-import BandProfile from './src/components/BandProfile';
+import { Navigation } from 'react-native-navigation';
+import LoginScreen from './src/screens/Login';
+import TestScreen from './src/screens/Test';
+import BandListScreen from './src/screens/BandsListScreen';
+import TopAlbumsScreen from './src/screens/TopAlbumsScreen';
+import ListAlbumsScreen from './src/screens/ListAlbumsScreen';
+import BandProfileScreen from './src/screens/BandProfileScreen';
+import Player from './src/screens/Player';
 
-export default class App extends React.Component {
+//Register Screens
+Navigation.registerComponent("awesome-ffit.LoginScreen", () => LoginScreen);
+Navigation.registerComponent("awesome-ffit.TestScreen", () => TestScreen);
+Navigation.registerComponent("awesome-ffit.BandListScreen", () => BandListScreen);
+Navigation.registerComponent("awesome-ffit.TopAlbumsScreen", () => TopAlbumsScreen);
+Navigation.registerComponent("awesome-ffit.ListAlbumsScreen", () => ListAlbumsScreen);
+Navigation.registerComponent("awesome-ffit.BandProfileScreen", () => BandProfileScreen);
+Navigation.registerComponent("awesome-ffit.Player", () => Player);
 
-  render() {
-
-    return (
-      <ScrollView style={styles.scrollView}>
-        <View style={styles.container}>
-          <AlbumList></AlbumList>
-        </View>
-      </ScrollView>
-      
-    );
+//Start App
+export default () => Navigation.startSingleScreenApp({
+  screen: {
+    screen: 'awesome-ffit.LoginScreen', // unique ID registered with Navigation.registerScreen
+    title: 'Login', // title of the screen as appears in the nav bar (optional)
+    navigatorStyle: {}, // override the navigator style for the screen, see "Styling the navigator" below (optional) // override the nav buttons for the screen, see "Adding buttons to the navigator" below (optional)
+    navigatorButtons: {},
   }
-}
-
-const styles = StyleSheet.create({
-  scrollView: {
-      flex: 1,
-      backgroundColor: '#eee',
-  },
-  container: {
-    flex: 1,
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
-    flexDirection: 'row',
-    flexWrap: 'wrap'
-  },
 });

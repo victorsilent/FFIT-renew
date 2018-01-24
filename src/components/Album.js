@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, Dimensions, TouchableOpacity } from 'react-native';
 
-const Album = ({ bandName, albumName, albumImage, onPress}) => {
+const Album = ({ bandName, albumName, albumImage, onPressed}) => {
     return (
-        <TouchableOpacity onPress={() => () => {}}>
+        <TouchableOpacity onPress={onPressed}>
             <View style={styles.card}>
                 <Image
                     resizeMode="cover"

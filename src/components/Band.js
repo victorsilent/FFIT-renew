@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, Dimensions, TouchableOpacity } from 'react-native';
 
-const Album = ({ bandName, musicCount, albumCount, bandImage}) => {
+const Band = ({ bandName, musicCount, albumCount, bandImage, onPressed}) => {
     return (
-        <TouchableOpacity onPress={() => () => {}}>
+        <TouchableOpacity onPress={onPressed}>
             <View style={styles.card}>
                 <Image
                     resizeMode="cover"
@@ -51,4 +51,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Album;
+export default Band;
