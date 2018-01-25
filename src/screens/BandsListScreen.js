@@ -37,12 +37,14 @@ class BandListScreen extends Component {
             return band.name.includes(this.state.search)
         })
         return (
-            <ScrollView>
-                <TextInput onChangeText={this.handleChange}></TextInput>
+            <ScrollView style={{backgroundColor: '#fff', flex: 1}}>
                 <View>
-                    {items.map((band) => {
-                        return <Band musicCount={sumMusics(band.albums)} albumCount={band.albums.length} key={band.id} onPressed={() => this.pushPath(`BandProfileScreen/${band.id}`)} bandName={band.name}></Band>
-                    })}
+                    <TextInput placeholder="Filtre a banda" onChangeText={this.handleChange}></TextInput>
+                    <View>
+                        {items.map((band) => {
+                            return <Band musicCount={sumMusics(band.albums)} albumCount={band.albums.length} key={band.id} onPressed={() => this.pushPath(`BandProfileScreen/${band.id}`)} bandName={band.name}></Band>
+                        })}
+                    </View>
                 </View>
             </ScrollView>
         );

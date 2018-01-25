@@ -3538,9 +3538,9 @@ react-native-cli@^2.0.1:
     prompt "^0.2.14"
     semver "^5.0.3"
 
-react-native-navigation@^1.1.351:
-  version "1.1.351"
-  resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-1.1.351.tgz#605efe5915b206b61ec77e0004ea49b1f4d2903b"
+react-native-navigation@^1.1.352:
+  version "1.1.352"
+  resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-1.1.352.tgz#866f111e5f058a24bd9646ca1c45f77ceb91ae1f"
   dependencies:
     lodash "4.x.x"
 

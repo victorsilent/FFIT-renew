@@ -29,24 +29,21 @@ class Player extends Component {
         })
     }
     timer = (payload, prop = 'start') => {
-        if(!this.state.running){
-            this.setState({
-                musicMinutes: this.state.musicMinutes + payload
-            })
-        }
-        if(prop === 'back'){
-            this.setState({
-                musicMinutes: this.state.musicMinutes - payload
-            })
-        }
-        if(prop === 'next'){
-            this.setState({
-                musicMinutes: this.state.musicMinutes + payload
-            })
-        }
-        if(this.state.musicMinutes > 100 || this.state.musicMinutes < 0) { 
-            this.clearPlayer(0);
-            clearInterval(this.state.intervalId);
+        if(this.state.running){
+            if(prop === 'back'){
+                this.setState({
+                    musicMinutes: this.state.musicMinutes - payload
+                })
+            }
+            if(prop === 'next' || prop === 'start'){
+                this.setState({
+                    musicMinutes: this.state.musicMinutes + payload
+                })
+            }
+            if(this.state.musicMinutes > 100 || this.state.musicMinutes < 0) { 
+                this.clearPlayer(0);
+                clearInterval(this.state.intervalId);
+            }
         }
     }
     returnMusic = () => {
@@ -66,9 +63,8 @@ class Player extends Component {
     onPlay = () => {
         clearInterval(this.state.intervalId);
         let intervalId;
-        this.setState({running: !this.state.running})
         intervalId = setInterval(this.timer.bind(this, 1), 400);
-        this.setState({intervalId: intervalId});
+        this.setState({running: !this.state.running, intervalId: intervalId})
     }
     updateTime = (value) => {
         this.setState({musicMinutes: value});
@@ -104,7 +100,7 @@ class Player extends Component {
                     </View>
                     <View style={styles.controlers}>
                         <Icon onPress={this.returnMusic} name="previous"size={30} color="#4F8EF7"/>
-                        <Icon onPress={this.onPlay} name="play"size={30} color="#4F8EF7"/>
+                        <Icon onPress={this.onPlay} name={this.state.running ? 'pause' : 'play'}size={30} color="#4F8EF7"/>
                         <Icon onPress={this.nextMusic} name="next"size={30} color="#4F8EF7"/>
                     </View>
                     <View style={styles.volumeControl}>

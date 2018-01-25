@@ -46,7 +46,7 @@ class TopAlbumsScreen extends Component {
     render() {
         return (
             <ScrollView>
-                <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
+                <View style={{flexDirection: 'row', flexWrap: 'wrap', backgroundColor: '#fff'}}>
                     {this.state.topAlbums.map((album) => {
                         return <Album key={album.id} albumImage={album.albumPicture} bandName={album.bandName} albumName={album.name} onPressed={() => this.pushPath(`Player/${album.id}`)}></Album>
                     })}

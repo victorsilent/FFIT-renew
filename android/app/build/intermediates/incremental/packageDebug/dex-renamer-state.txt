@@ -1,4 +1,4 @@
-#Tue Jan 23 22:56:57 BRST 2018
-base.0=W\:\\FFIT\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+#Thu Jan 25 02:50:50 BRST 2018
+base.0=W\:\\newFFIT\\FFIT-test\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
-file.0=W\:\\FFIT\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
+file.0=W\:\\newFFIT\\FFIT-test\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

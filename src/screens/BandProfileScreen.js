@@ -19,7 +19,7 @@ class BandProfileScreen extends Component {
     render() {
         const band = this.state.band[0];
         return (
-            <ScrollView>
+            <ScrollView style={{backgroundColor: '#fff', flex: 1}}>
                 <View style={{flex: 1}}>
                     <BandProfile bandName={band.name} description={band.description} albums={band.albums} imageHeader={band.bandProfile}></BandProfile>
                 </View>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableHighlight } from 'react-native';
+import { View, Text, TouchableHighlight, StyleSheet } from 'react-native';
 import App from '../../App';
 
 class TestScreen extends Component {
@@ -15,17 +15,23 @@ class TestScreen extends Component {
         return (
             <View style={{backgroundColor: "#fff", flex: 1}}>
                 <TouchableHighlight onPress={() => this.pushPath('BandListScreen')}>
-                    <Text>Band List</Text>
+                    <Text style={styles.itemDrawer}>Band List</Text>
                 </TouchableHighlight>
                 <TouchableHighlight onPress={() => this.pushPath('ListAlbumsScreen')}>
-                    <Text>List Albums</Text>
+                    <Text style={styles.itemDrawer}>List Albums</Text>
                 </TouchableHighlight>
                 <TouchableHighlight onPress={() => this.pushPath('LoginScreen')}>
-                    <Text>Logout</Text>
+                    <Text style={styles.itemDrawer}>Logout</Text>
                 </TouchableHighlight>
             </View>
         );
     }
 }
 
+const styles = StyleSheet.create({
+    itemDrawer: {
+        backgroundColor: '#fff',
+        padding: 10,
+    }
+})
 export default TestScreen;

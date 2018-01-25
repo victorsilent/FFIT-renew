@@ -36,8 +36,8 @@ class ListAlbumsScreen extends Component {
             return album.name.includes(this.state.search)
         })
         return (
-            <ScrollView>
-                <TextInput onChangeText={this.handleChange}></TextInput>
+            <ScrollView style={{backgroundColor: '#fff', flex: 1}}>
+                <TextInput placeholder="Filtre o album" onChangeText={this.handleChange}></TextInput>
                 <View style={{flex: 1}}>
                     {items.map((album) => {
                         return <AlbumItemList key={album.id} albumName={album.name}  albumTotalTime={album.albumTotalTime} imageAlbum={album.albumPicture} onPressed={() => this.pushPath(`Player/${album.id}`)}></AlbumItemList>
